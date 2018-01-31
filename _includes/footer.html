@@ -1,0 +1,34 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          {% if site.homepage %}
+            <li><a href="https://{{ site.homepage }}">{{ site.homepage }}</a></li>
+          {% endif %}
+          {% if site.email %}
+            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{ site.description | escape }}</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="footer-note">made with love and <a href="https://jekyllrb.com/">jekyll</a></p>
+    </div>
+
+  </div>
+
+</footer>
