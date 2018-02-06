@@ -6,24 +6,23 @@ layout: default
 
   <header class="post-header">
     <a href="{{ page.websiteurl }}"><h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1></a>
+
     <p class="post-meta">
-      <span class="review-rating">{{ page.rating }}</span>
-      <span class="divider"></span>
-      <span class="review-price">{{ page.price }}</span>
-      <span class="divider"></span>
-      <span class="review-location">{{ page.location }}</span>
-      <span class="divider"></span>
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         {{ page.date | date: date_format }}
         </time>
       </p>
 
-    <p class="post-tags">
-      {{ page.tags }} style pizza
-      </p>
-
   </header>
+
+  <aside class="review-menu">
+    <h2 class="neon review-name">{{page.name}}</h2>
+    <p class="review-tags">{{ page.tags }} style pizza</p>
+    <p class="review-price">{{ page.price }}</p>
+    <p class="review-rating">{{ page.rating }}</p>
+    <p class="review-location">{{ page.location }}</p>
+  </aside>
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}
