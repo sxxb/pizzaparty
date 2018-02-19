@@ -16,17 +16,17 @@ layout: default
 
   </header>
 
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
   <aside class="review-menu">
-    <h2 class="neon review-name">{{page.name}}</h2>
-    <p class="review-tags">{{ page.tags }} style pizza</p>
+    <h2 class="neon review-name"><a href="{{ page.websiteurl }}">{{page.name}}</a></h2>
+    <p class="review-notes">{{ page.tags }} style pizza</p>
     <p class="review-price">{{ page.price }}</p>
     <p class="review-rating">{{ page.rating }}</p>
     <p class="review-location">{{ page.location }}</p>
   </aside>
-
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
 
   {% if site.disqus.shortname %}
     {% include disqus_comments.html %}

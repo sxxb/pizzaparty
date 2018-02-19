@@ -69,11 +69,12 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .site-nav .nav-trigger { display: none; }
 .site-nav .menu-icon { display: none; }
 .site-nav .page-link { color: #111; line-height: 1.6; text-transform: lowercase; }
+.site-nav .page-link:hover { color: #ff6347; transition: 0.5s; }
 .site-nav .page-link:not(:last-child) { margin-right: 20px; }
-@media screen and (max-width: 600px) { .site-nav { position: absolute; top: 9px; right: 15px; background-color: #fdfdfd; border: 1px solid #c2c2c2; border-radius: 5px; text-align: right; }
+@media screen and (max-width: 620px) { .site-nav { position: absolute; top: 9px; right: 15px; background-color: #fdfdfd; box-shadow: 0px 1px 1px 1px #0002; border-radius: 5px; text-align: right; }
   .site-nav label[for="nav-trigger"] { display: block; float: right; width: 36px; height: 36px; z-index: 2; cursor: pointer; }
   .site-nav .menu-icon { display: block; float: right; width: 36px; height: 26px; line-height: 0; padding-top: 10px; text-align: center; }
-  .site-nav .menu-icon > svg path { fill: #424242; }
+  .site-nav .menu-icon > svg path { fill: #ff6347; }
   .site-nav input ~ .trigger { clear: both; display: none; }
   .site-nav input:checked ~ .trigger { display: block; padding-bottom: 5px; }
   .site-nav .page-link { display: block; padding: 5px 10px; margin-left: 20px; }
@@ -86,7 +87,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .contact-list, .social-media-list { list-style: none; margin-left: 0; }
 
-.footer-col-wrapper { font-size: 15px; color: #828282; margin-left: -15px; }
+.footer-col-wrapper { font-size: 15px; color: #828282; margin-left: 15px; }
 
 .footer-col { float: left; margin-bottom: 15px; padding-left: 15px; }
 
@@ -100,9 +101,9 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 @media screen and (max-width: 40em) { .footer-col-1, .footer-col-2 { width: -webkit-calc(50% - (30px / 2)); width: calc(50% - (30px / 2)); }
   .footer-col-3 { width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); } }
-@media screen and (max-width: 600px) { .footer-col { float: none; width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); }
-  .divider { display: block; }
-  .divider::after { content: "~"; } }
+@media screen and (max-width: 620px) { .footer-col { float: none; width: -webkit-calc(100% - (30px / 2)); width: calc(100% - (30px / 2)); }
+  .divider { display: inline; }
+  .divider::after { content: "//"; } }
 /** Page content */
 .page-content { padding: 30px 0; }
 
@@ -117,8 +118,8 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .divider::after { content: "//"; color: #c2c2c2; }
 
-@media screen and (max-width: 600px) { .post-title, .post-meta, .post-tags { text-align: center; }
-  .divider { display: block; }
+@media screen and (max-width: 620px) { .post-title, .post-meta, .post-tags { text-align: center; }
+  .divider { display: inline; }
   .divider::after { content: "~"; } }
 .post-link { display: inline-block; font-size: 24px; }
 
@@ -143,7 +144,22 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .post-content h4 { font-size: 20px; }
 @media screen and (max-width: 40em) { .post-content h4 { font-size: 18px; } }
 
-@media (min-width: 1000px) { .review-menu { background-color: black; color: white; } }
+.review-menu { background-color: #222; background: linear-gradient(45deg, #191919 0%, #323232 100%); color: #fdfdfd; border-radius: 10px; padding: 2vw; box-shadow: 1px 1px 1px 1px #0002; overflow: hidden; }
+
+.review-menu p { display: inline-block; }
+
+.review-menu p::after { content: " //"; }
+
+.review-menu p:last-of-type::after { content: ""; }
+
+.neon { color: #fff; text-shadow: 0 0 5px #fffa, 0 0 10px #fffc, 0 0 20px #fff, 0 0 30px #ff6347, 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 90px #ff6347, 0 0 100px #ff6347, 0 0 150px #ff6347; }
+.neon:hover { text-shadow: 0 0 5px #fffa, 0 0 10px #fffc, 0 0 20px #fff, 0 0 30px #ff6347, 0 0 40px #ff6347, 0 0 80px #ff6347, 0 0 90px #ff6347, 0 0 100px #ff6347, 0 0 150px #ff6347, 0 0 175px #ff6347, 0 0 200px #ff6347, 0 0 225px #ff6347, 0 0 250px #ff6347; transition: 0.5s; }
+.neon a { color: #fff; }
+.neon a:hover { color: #fff; }
+
+@media (min-width: 1000px) { .review-menu { width: 12vw; position: fixed; top: 100px; left: 2.5vw; }
+  .review-menu p { display: block; }
+  .review-menu p::after { content: ""; } }
 /** Syntax highlighting styles */
 .highlight { background: #fff; }
 .highlighter-rouge .highlight { background: #eef; }

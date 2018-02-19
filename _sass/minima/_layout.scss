@@ -47,7 +47,10 @@
     color: $text-color;
     line-height: $base-line-height;
     text-transform: lowercase;
-
+    &:hover {
+      color:$red-color;
+      transition: 0.5s;
+    }
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
@@ -59,7 +62,7 @@
     top: 9px;
     right: $spacing-unit / 2;
     background-color: $background-color;
-    border: 1px solid $grey-color-light;
+    box-shadow: 0px 1px 1px 1px #0002;
     border-radius: 5px;
     text-align: right;
 
@@ -82,7 +85,7 @@
       text-align: center;
 
       > svg path {
-        fill: $grey-color-dark;
+        fill: $red-color;
       }
     }
 
@@ -134,7 +137,7 @@
 .footer-col-wrapper {
   @include relative-font-size(0.9375);
   color: $grey-color;
-  margin-left: -$spacing-unit / 2;
+  margin-left: $spacing-unit / 2;
   @extend %clearfix;
 }
 
@@ -185,10 +188,10 @@
     width:         calc(100% - (#{$spacing-unit} / 2));
   }
   .divider {
-    display:block;
+    display:inline;
   }
   .divider::after {
-    content:"~";
+    content:"//";
   }
 }
 
@@ -233,7 +236,7 @@
     text-align: center;
   }
   .divider {
-    display:block;
+    display:inline;
   }
   .divider::after {
     content:"~";
@@ -315,21 +318,74 @@
 //to do
 
 .review-menu {
-
+  background-color:#222;
+  background: linear-gradient(45deg, rgba(25,25,25,1) 0%, rgba(50,50,50,1) 100%);
+  color:#fdfdfd;
+  border-radius: 10px;
+  padding: 2vw;
+  box-shadow: 1px 1px 1px 1px #0002;
+  overflow: hidden;
 }
 .review-menu p {
-
+  display: inline-block;
+}
+.review-menu p::after {
+  content: " //";
+}
+.review-menu p:last-of-type::after {
+  content: "";
 }
 .neon {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fffa,
+    0 0 10px #fffc,
+    0 0 20px #fff,
+    0 0 30px $red-color,
+    0 0 40px $red-color,
+    0 0 80px $red-color,
+    0 0 90px $red-color,
+    0 0 100px $red-color,
+    0 0 150px $red-color;
 
+    &:hover {
+      text-shadow:
+        0 0 5px #fffa,
+        0 0 10px #fffc,
+        0 0 20px #fff,
+        0 0 30px $red-color,
+        0 0 40px $red-color,
+        0 0 80px $red-color,
+        0 0 90px $red-color,
+        0 0 100px $red-color,
+        0 0 150px $red-color,
+        0 0 175px $red-color,
+        0 0 200px $red-color,
+        0 0 225px $red-color,
+        0 0 250px $red-color;
+      transition: 0.5s;
+    }
+    a {
+      color:#fff;
+    }
+    a:hover {
+      color:#fff;
+    }
 }
+
 
 @media (min-width:1000px) {
   .review-menu {
-    background-color: black; //testing only
-    color:white; //testing only
+    width: 12vw;
+    position:fixed;
+    top:100px;
+    left:2.5vw;
+
   }
   .review-menu p {
-
+    display:block;
+  }
+  .review-menu p::after {
+    content: "";
   }
 }
